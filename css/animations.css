@@ -1,9 +1,4 @@
-/* ============================================
-   DNA Word Encoder - Animation Styles
-   Smooth, natural, purposeful animations
-   ============================================ */
 
-/* Page Transitions */
 .fade-in {
     opacity: 0;
     animation: fadeIn 0.8s ease forwards;
