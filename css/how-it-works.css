@@ -1,0 +1,558 @@
+/* ============================================
+   DNA Word Encoder - How It Works Page Styles
+   ============================================ */
+
+/* Hero */
+.hiw-hero {
+    padding: var(--space-4xl) 0 var(--space-3xl);
+    text-align: center;
+    background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-subtle) 100%);
+}
+
+.hiw-title {
+    margin-bottom: var(--space-md);
+}
+
+.hiw-subtitle {
+    font-size: 1.25rem;
+    color: var(--color-text-muted);
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Pipeline */
+.pipeline-section {
+    padding: var(--space-2xl) 0 var(--space-4xl);
+}
+
+.pipeline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+}
+
+.pipeline-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.pipeline-icon {
+    width: 72px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all var(--transition-base);
+}
+
+.pipeline-icon:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.pipeline-icon.mono {
+    font-family: var(--font-mono);
+}
+
+.pipeline-icon.dna {
+    font-family: var(--font-mono);
+    color: var(--color-primary);
+    letter-spacing: 0.05em;
+}
+
+.pipeline-icon.helix svg {
+    width: 32px;
+    height: 32px;
+    color: var(--color-primary);
+}
+
+.pipeline-label {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
+}
+
+.pipeline-connector {
+    display: flex;
+    align-items: center;
+    padding: 0 var(--space-xs);
+}
+
+.pipeline-connector svg {
+    width: 40px;
+    height: 20px;
+    color: var(--color-text-muted);
+}
+
+/* Step Sections */
+.step-section {
+    padding: var(--space-4xl) 0;
+}
+
+.step-section.alt {
+    background: var(--color-bg-subtle);
+}
+
+.step-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4xl);
+    align-items: center;
+}
+
+.step-content.reverse {
+    direction: rtl;
+}
+
+.step-content.reverse > * {
+    direction: ltr;
+}
+
+.step-info {
+    max-width: 480px;
+}
+
+.step-badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-md);
+}
+
+.step-title {
+    margin-bottom: var(--space-lg);
+    color: var(--color-text);
+}
+
+.step-description {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    margin-bottom: var(--space-md);
+}
+
+.step-detail {
+    padding: var(--space-md);
+    background: var(--color-primary-subtle);
+    border-radius: var(--radius-md);
+    border-left: 3px solid var(--color-primary);
+}
+
+.step-detail p {
+    font-size: 0.9375rem;
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+
+.step-visual {
+    display: flex;
+    justify-content: center;
+}
+
+/* Conversion Example */
+.conversion-example {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    align-items: center;
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-2xl);
+    box-shadow: var(--shadow-md);
+}
+
+.example-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+.example-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+}
+
+.example-value {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.example-arrow {
+    color: var(--color-text-muted);
+}
+
+.example-arrow svg {
+    width: 24px;
+    height: 24px;
+    transform: rotate(90deg);
+}
+
+/* Mapping Grid */
+.mapping-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+}
+
+.mapping-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    transition: all var(--transition-base);
+}
+
+.mapping-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.mapping-binary {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+}
+
+.mapping-arrow {
+    color: var(--color-text-muted);
+    font-size: 1rem;
+}
+
+.mapping-base {
+    font-family: var(--font-mono);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.mapping-name {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Pairing Visual */
+.pairing-visual {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+}
+
+.pairing-example {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-2xl);
+}
+
+.pair-group {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.pair-base {
+    font-family: var(--font-mono);
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.pair-bond {
+    font-size: 1.5rem;
+    color: var(--color-text-muted);
+    letter-spacing: -0.1em;
+}
+
+.pair-label {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+}
+
+/* Decode Flow */
+.decode-flow {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    justify-content: center;
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-2xl);
+}
+
+.decode-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+.decode-value {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.decode-value.dna {
+    color: var(--color-primary);
+    letter-spacing: 0.1em;
+}
+
+.decode-label {
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+}
+
+.decode-arrow {
+    font-size: 1.25rem;
+    color: var(--color-text-muted);
+}
+
+/* Complete Example Section */
+.example-section {
+    background: var(--color-bg-subtle);
+}
+
+.complete-example {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-2xl);
+    box-shadow: var(--shadow-md);
+}
+
+.example-row {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-xl);
+    padding: var(--space-md) 0;
+}
+
+.example-row.chars {
+    gap: var(--space-3xl);
+}
+
+.example-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+.cell-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    font-weight: 500;
+}
+
+.cell-value {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--color-text);
+}
+
+.example-divider {
+    height: 1px;
+    background: var(--color-border);
+    margin: var(--space-sm) 0;
+}
+
+.dna-bases {
+    display: flex;
+    gap: var(--space-xs);
+}
+
+.dna-bases .base {
+    font-family: var(--font-mono);
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-sm);
+    background: var(--color-bg-subtle);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - How It Works
+   ============================================ */
+
+@media (max-width: 900px) {
+    .step-content,
+    .step-content.reverse {
+        grid-template-columns: 1fr;
+        direction: ltr;
+        gap: var(--space-xl);
+    }
+    
+    .step-info {
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .step-detail {
+        border-left: none;
+        border-top: 3px solid var(--color-primary);
+    }
+}
+
+@media (max-width: 768px) {
+    .hiw-hero {
+        padding: var(--space-2xl) 0 var(--space-xl);
+    }
+    
+    .hiw-title {
+        font-size: 2rem;
+    }
+    
+    .hiw-subtitle {
+        font-size: 1rem;
+    }
+    
+    .pipeline-section {
+        padding: var(--space-lg) 0 var(--space-2xl);
+    }
+    
+    .step-section {
+        padding: var(--space-2xl) 0;
+    }
+    
+    .step-badge {
+        font-size: 0.6875rem;
+    }
+    
+    .step-title {
+        font-size: 1.5rem;
+    }
+    
+    .step-description {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .pipeline {
+        gap: var(--space-xs);
+        padding: 0 var(--space-sm);
+    }
+    
+    .pipeline-step {
+        gap: var(--space-xs);
+    }
+    
+    .pipeline-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 0.75rem;
+    }
+    
+    .pipeline-label {
+        font-size: 0.6875rem;
+    }
+    
+    .pipeline-connector {
+        display: none;
+    }
+    
+    .mapping-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-sm);
+    }
+    
+    .mapping-item {
+        padding: var(--space-md);
+    }
+    
+    .mapping-base {
+        font-size: 1.5rem;
+    }
+    
+    .decode-flow {
+        flex-direction: column;
+        padding: var(--space-lg);
+    }
+    
+    .decode-arrow {
+        transform: rotate(90deg);
+    }
+    
+    .conversion-example {
+        padding: var(--space-lg);
+    }
+    
+    .example-value {
+        font-size: 1.25rem;
+    }
+    
+    .pairing-example {
+        padding: var(--space-lg);
+    }
+    
+    .pair-base {
+        font-size: 2rem;
+    }
+    
+    .complete-example {
+        padding: var(--space-lg);
+    }
+    
+    .example-row {
+        gap: var(--space-md);
+    }
+    
+    .dna-bases .base {
+        font-size: 1rem;
+        padding: 4px 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hiw-title {
+        font-size: 1.75rem;
+    }
+    
+    .pipeline-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 0.6875rem;
+    }
+    
+    .mapping-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .step-title {
+        font-size: 1.25rem;
+    }
+}

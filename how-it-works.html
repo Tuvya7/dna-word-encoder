@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn how DNA encoding works — from text to binary to nucleotides.">
+    <title>How It Works — DNA Word Encoder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/how-it-works.css">
+    <script>
+        // Immediately set theme to prevent flash of wrong theme
+        (function() {
+            const savedTheme = localStorage.getItem('dna-encoder-theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+</head>
+<body>
+    <nav class="nav" id="mainNav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-dna">DNA</span>
+                <span class="logo-separator">·</span>
+                <span class="logo-text">Encoder</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="encoder.html" class="nav-link">Encoder</a>
+                <a href="how-it-works.html" class="nav-link active">How It Works</a>
+                <a href="about.html" class="nav-link">About</a>
+            </div>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <svg class="theme-icon sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                </svg>
+                <svg class="theme-icon moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
+        </div>
+    </nav>
+    <main class="page-content">
+        <section class="hiw-hero">
+            <div class="container">
+                <div class="hiw-hero-content fade-in-up">
+                    <h1 class="hiw-title">How It Works</h1>
+                    <p class="hiw-subtitle">A visual journey through the encoding process</p>
+                </div>
+            </div>
+        </section>
+        <section class="section pipeline-section">
+            <div class="container">
+                <div class="pipeline reveal-on-scroll">
+                    <div class="pipeline-step"><div class="pipeline-icon"><span>Aa</span></div><span class="pipeline-label">Text</span></div>
+                    <div class="pipeline-connector"><svg viewBox="0 0 40 20"><path d="M0 10h40" stroke="currentColor" stroke-width="2" fill="none" stroke-dasharray="4 4"/><path d="M32 5l8 5-8 5" stroke="currentColor" stroke-width="2" fill="none"/></svg></div>
+                    <div class="pipeline-step"><div class="pipeline-icon mono"><span>01</span></div><span class="pipeline-label">Binary</span></div>
+                    <div class="pipeline-connector"><svg viewBox="0 0 40 20"><path d="M0 10h40" stroke="currentColor" stroke-width="2" fill="none" stroke-dasharray="4 4"/><path d="M32 5l8 5-8 5" stroke="currentColor" stroke-width="2" fill="none"/></svg></div>
+                    <div class="pipeline-step"><div class="pipeline-icon dna"><span>ACGT</span></div><span class="pipeline-label">DNA</span></div>
+                    <div class="pipeline-connector"><svg viewBox="0 0 40 20"><path d="M0 10h40" stroke="currentColor" stroke-width="2" fill="none" stroke-dasharray="4 4"/><path d="M32 5l8 5-8 5" stroke="currentColor" stroke-width="2" fill="none"/></svg></div>
+                    <div class="pipeline-step"><div class="pipeline-icon helix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10"/><path d="M12 2c3 0 6 4.5 6 10"/><path d="M2 12h20"/></svg></div><span class="pipeline-label">Double Helix</span></div>
+                </div>
+            </div>
+        </section>
+        <section class="section step-section reveal-on-scroll">
+            <div class="container">
+                <div class="step-content">
+                    <div class="step-info">
+                        <div class="step-badge">Step 01</div>
+                        <h2 class="step-title">Text to Binary</h2>
+                        <p class="step-description">Every character has a unique ASCII code converted to 8-bit binary.</p>
+                    </div>
+                    <div class="step-visual">
+                        <div class="conversion-example">
+                            <div class="example-item"><span class="example-label">Character</span><span class="example-value">"H"</span></div>
+                            <div class="example-arrow">→</div>
+                            <div class="example-item"><span class="example-label">ASCII</span><span class="example-value">72</span></div>
+                            <div class="example-arrow">→</div>
+                            <div class="example-item"><span class="example-label">Binary</span><span class="example-value mono">01001000</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section step-section alt reveal-on-scroll">
+            <div class="container">
+                <div class="step-content reverse">
+                    <div class="step-info">
+                        <div class="step-badge">Step 02</div>
+                        <h2 class="step-title">Binary to DNA Bases</h2>
+                        <p class="step-description">Binary is divided into 2-bit pairs, each mapping to a nucleotide.</p>
+                    </div>
+                    <div class="step-visual">
+                        <div class="mapping-grid">
+                            <div class="mapping-item"><span class="mapping-binary mono">00</span><span class="mapping-arrow">→</span><span class="mapping-base base-a">A</span><span class="mapping-name">Adenine</span></div>
+                            <div class="mapping-item"><span class="mapping-binary mono">01</span><span class="mapping-arrow">→</span><span class="mapping-base base-c">C</span><span class="mapping-name">Cytosine</span></div>
+                            <div class="mapping-item"><span class="mapping-binary mono">10</span><span class="mapping-arrow">→</span><span class="mapping-base base-g">G</span><span class="mapping-name">Guanine</span></div>
+                            <div class="mapping-item"><span class="mapping-binary mono">11</span><span class="mapping-arrow">→</span><span class="mapping-base base-t">T</span><span class="mapping-name">Thymine</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section step-section reveal-on-scroll">
+            <div class="container">
+                <div class="step-content">
+                    <div class="step-info">
+                        <div class="step-badge">Step 03</div>
+                        <h2 class="step-title">Complementary Pairing</h2>
+                        <p class="step-description">A pairs with T, C pairs with G — completing the double helix.</p>
+                    </div>
+                    <div class="step-visual">
+                        <div class="pairing-visual">
+                            <div class="pairing-example"><div class="pair-group"><span class="pair-base base-a">A</span><span class="pair-bond">═══</span><span class="pair-base base-t">T</span></div></div>
+                            <div class="pairing-example"><div class="pair-group"><span class="pair-base base-c">C</span><span class="pair-bond">≡≡≡</span><span class="pair-base base-g">G</span></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section step-section alt reveal-on-scroll">
+            <div class="container">
+                <div class="step-content reverse">
+                    <div class="step-info">
+                        <div class="step-badge">Step 04</div>
+                        <h2 class="step-title">Decoding</h2>
+                        <p class="step-description">The process reverses: DNA → Binary → Text, recovering the original message.</p>
+                    </div>
+                    <div class="step-visual">
+                        <div class="decode-flow">
+                            <div class="decode-step"><span class="decode-value dna">CAGA</span><span class="decode-label">DNA</span></div>
+                            <div class="decode-arrow">→</div>
+                            <div class="decode-step"><span class="decode-value mono">01001000</span><span class="decode-label">Binary</span></div>
+                            <div class="decode-arrow">→</div>
+                            <div class="decode-step"><span class="decode-value">"H"</span><span class="decode-label">Text</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section cta-section reveal-on-scroll">
+            <div class="container">
+                <div class="cta-card">
+                    <div class="cta-content">
+                        <h2 class="cta-title">Try It Yourself</h2>
+                        <p class="cta-description">Encode your own message and watch it transform into DNA.</p>
+                        <a href="encoder.html" class="btn btn-primary btn-large"><span>Open Encoder</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand"><span class="footer-logo">DNA Encoder</span><p class="footer-tagline">Biology as a Language of Data</p></div>
+                <div class="footer-links"><a href="index.html">Home</a><a href="encoder.html">Encoder</a><a href="how-it-works.html">How It Works</a><a href="about.html">About</a></div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>

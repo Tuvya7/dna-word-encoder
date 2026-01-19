@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DNA Word Encoder — Explore how biology can serve as a language of data through DNA-inspired encoding and decoding.">
+    <title>DNA Word Encoder — Biology as a Language of Data</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <script>
+        // Immediately set theme to prevent flash of wrong theme
+        (function() {
+            const savedTheme = localStorage.getItem('dna-encoder-theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="mainNav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-dna">DNA</span>
+                <span class="logo-separator">·</span>
+                <span class="logo-text">Encoder</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="encoder.html" class="nav-link">Encoder</a>
+                <a href="how-it-works.html" class="nav-link">How It Works</a>
+                <a href="about.html" class="nav-link">About</a>
+            </div>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <svg class="theme-icon sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="5"/>
+                    <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                </svg>
+                <svg class="theme-icon moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="page-content">
+        <section class="hero">
+            <div class="hero-background">
+                <div class="hero-gradient"></div>
+                <div class="floating-bases">
+                    <span class="floating-base base-a">A</span>
+                    <span class="floating-base base-t">T</span>
+                    <span class="floating-base base-c">C</span>
+                    <span class="floating-base base-g">G</span>
+                    <span class="floating-base base-a delay-1">A</span>
+                    <span class="floating-base base-g delay-2">G</span>
+                </div>
+            </div>
+            <div class="hero-content fade-in-up">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    <span>Biomimetic Data Encoding</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-line">Biology as a</span>
+                    <span class="title-line accent">Language of Data</span>
+                </h1>
+                <p class="hero-description">
+                    Discover how the molecular architecture of DNA can transform 
+                    the way we encode, store, and decode digital information.
+                </p>
+                <div class="hero-actions">
+                    <a href="encoder.html" class="btn btn-primary">
+                        <span>Open Encoder</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    <a href="how-it-works.html" class="btn btn-secondary">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual fade-in">
+                <div class="dna-preview">
+                    <div class="dna-strand-preview">
+                        <div class="preview-pair">
+                            <span class="preview-base base-a">A</span>
+                            <span class="preview-bond"></span>
+                            <span class="preview-base base-t">T</span>
+                        </div>
+                        <div class="preview-pair">
+                            <span class="preview-base base-c">C</span>
+                            <span class="preview-bond"></span>
+                            <span class="preview-base base-g">G</span>
+                        </div>
+                        <div class="preview-pair">
+                            <span class="preview-base base-g">G</span>
+                            <span class="preview-bond"></span>
+                            <span class="preview-base base-c">C</span>
+                        </div>
+                        <div class="preview-pair">
+                            <span class="preview-base base-t">T</span>
+                            <span class="preview-bond"></span>
+                            <span class="preview-base base-a">A</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="section features-section reveal-on-scroll">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">The Essence of DNA Encoding</h2>
+                    <p class="section-subtitle">
+                        A bridge between digital information and biological architecture
+                    </p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card reveal-on-scroll" style="--delay: 0.1s">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                <path d="M2 17l10 5 10-5"/>
+                                <path d="M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Binary Foundation</h3>
+                        <p class="feature-description">
+                            Every character transforms into 8-bit binary, the universal digital language that bridges human text to biological code.
+                        </p>
+                    </div>
+                    <div class="feature-card reveal-on-scroll" style="--delay: 0.2s">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 6v6l4 2"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Nucleotide Mapping</h3>
+                        <p class="feature-description">
+                            Binary pairs elegantly map to DNA bases — A, C, G, T — mirroring nature's own information storage system.
+                        </p>
+                    </div>
+                    <div class="feature-card reveal-on-scroll" style="--delay: 0.3s">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M4 4v16h16"/>
+                                <path d="M4 14l4-4 4 4 8-8"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Complementary Pairing</h3>
+                        <p class="feature-description">
+                            Following biological rules, each base finds its complement — A with T, C with G — creating the iconic double helix.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Overview -->
+        <section class="section process-section reveal-on-scroll">
+            <div class="container">
+                <div class="process-content">
+                    <div class="process-text">
+                        <h2 class="section-title">From Words to Molecules</h2>
+                        <p class="process-description">
+                            The journey of encoding begins with a simple word and ends with a 
+                            biologically-inspired double helix structure that can store and 
+                            preserve your data in nature's most elegant format.
+                        </p>
+                        <div class="process-steps">
+                            <div class="process-step">
+                                <span class="step-number">01</span>
+                                <span class="step-text">Text to Binary</span>
+                            </div>
+                            <div class="process-step">
+                                <span class="step-number">02</span>
+                                <span class="step-text">Binary to DNA</span>
+                            </div>
+                            <div class="process-step">
+                                <span class="step-number">03</span>
+                                <span class="step-text">Complementary Strand</span>
+                            </div>
+                        </div>
+                        <a href="how-it-works.html" class="btn btn-outline">
+                            Explore the Process
+                        </a>
+                    </div>
+                    <div class="process-visual">
+                        <div class="code-flow">
+                            <div class="flow-item">
+                                <span class="flow-label">Text</span>
+                                <span class="flow-value">"Hi"</span>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-item">
+                                <span class="flow-label">Binary</span>
+                                <span class="flow-value mono">01001000 01101001</span>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-item">
+                                <span class="flow-label">DNA</span>
+                                <span class="flow-value dna">CAGA CGAC</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section cta-section reveal-on-scroll">
+            <div class="container">
+                <div class="cta-card">
+                    <div class="cta-content">
+                        <h2 class="cta-title">Begin Your Exploration</h2>
+                        <p class="cta-description">
+                            Transform your words into the language of life. Experience the elegant 
+                            intersection of computer science and molecular biology.
+                        </p>
+                        <a href="encoder.html" class="btn btn-primary btn-large">
+                            <span>Open DNA Encoder</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="footer-logo">DNA Encoder</span>
+                    <p class="footer-tagline">Biology as a Language of Data</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="encoder.html">Encoder</a>
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="about.html">About</a>
+                </div>
+                <div class="footer-credits">
+                    <p>An exploration in biomimetic computing</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About DNA Word Encoder — Exploring biomimicry in data encoding and storage.">
+    <title>About — DNA Word Encoder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/about.css">
+    <script>
+        // Immediately set theme to prevent flash of wrong theme
+        (function() {
+            const savedTheme = localStorage.getItem('dna-encoder-theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+</head>
+<body>
+    <nav class="nav" id="mainNav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-dna">DNA</span>
+                <span class="logo-separator">·</span>
+                <span class="logo-text">Encoder</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="encoder.html" class="nav-link">Encoder</a>
+                <a href="how-it-works.html" class="nav-link">How It Works</a>
+                <a href="about.html" class="nav-link active">About</a>
+            </div>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <svg class="theme-icon sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                </svg>
+                <svg class="theme-icon moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
+        </div>
+    </nav>
+    <main class="page-content">
+        <section class="about-hero">
+            <div class="container">
+                <div class="about-hero-content fade-in-up">
+                    <h1 class="about-title">About This Project</h1>
+                    <p class="about-subtitle">Where biology meets information science</p>
+                </div>
+            </div>
+        </section>
+        <section class="section about-section reveal-on-scroll">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-card">
+                        <div class="about-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/>
+                            </svg>
+                        </div>
+                        <h2 class="about-card-title">The Concept</h2>
+                        <p class="about-card-text">DNA Word Encoder demonstrates how the principles of molecular biology can be applied to digital data encoding. By mapping binary data to DNA nucleotides (A, C, G, T), we create a bridge between the digital and biological worlds.</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="about-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <h2 class="about-card-title">Biomimicry</h2>
+                        <p class="about-card-text">Nature has perfected information storage over billions of years. DNA stores vast amounts of genetic information in an incredibly compact, stable format. This project draws inspiration from this elegant biological system.</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="about-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                        </div>
+                        <h2 class="about-card-title">Real Science</h2>
+                        <p class="about-card-text">DNA data storage is an active area of research. Scientists have successfully stored books, images, and even operating systems in synthetic DNA. This encoder illustrates the fundamental principles behind such technology.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section science-section reveal-on-scroll">
+            <div class="container">
+                <div class="science-content">
+                    <div class="science-text">
+                        <h2 class="section-title">The Science Behind It</h2>
+                        <p>DNA (deoxyribonucleic acid) is nature's information storage molecule. It consists of four nucleotide bases: Adenine (A), Cytosine (C), Guanine (G), and Thymine (T). These four bases form the genetic alphabet that encodes all life on Earth.</p>
+                        <p>In our digital encoding scheme, we leverage the quaternary nature of DNA to represent binary data. Each pair of bits (2 bits) can represent 4 possible values (00, 01, 10, 11), which maps perfectly to the 4 DNA bases.</p>
+                        <p>The complementary base pairing (A↔T, C↔G) is fundamental to DNA's structure and replication. We faithfully represent this biological principle in our double helix visualization.</p>
+                    </div>
+                    <div class="science-facts">
+                        <div class="fact-card">
+                            <span class="fact-number">215 PB</span>
+                            <span class="fact-label">Theoretical storage per gram of DNA</span>
+                        </div>
+                        <div class="fact-card">
+                            <span class="fact-number">1000+</span>
+                            <span class="fact-label">Years of data stability</span>
+                        </div>
+                        <div class="fact-card">
+                            <span class="fact-number">4</span>
+                            <span class="fact-label">Nucleotide bases (A, C, G, T)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section purpose-section reveal-on-scroll">
+            <div class="container">
+                <div class="purpose-content">
+                    <h2 class="section-title">Educational Purpose</h2>
+                    <p class="purpose-text">This project serves as an educational tool to help visualize and understand the intersection of computer science and molecular biology. It makes abstract concepts tangible through interactive demonstration.</p>
+                    <div class="purpose-points">
+                        <div class="purpose-point">
+                            <span class="point-icon">→</span>
+                            <span>Demonstrates binary-to-quaternary encoding</span>
+                        </div>
+                        <div class="purpose-point">
+                            <span class="point-icon">→</span>
+                            <span>Visualizes DNA's double helix structure</span>
+                        </div>
+                        <div class="purpose-point">
+                            <span class="point-icon">→</span>
+                            <span>Illustrates complementary base pairing</span>
+                        </div>
+                        <div class="purpose-point">
+                            <span class="point-icon">→</span>
+                            <span>Shows lossless encoding and decoding</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section cta-section reveal-on-scroll">
+            <div class="container">
+                <div class="cta-card">
+                    <div class="cta-content">
+                        <h2 class="cta-title">Experience It</h2>
+                        <p class="cta-description">Transform your words into the language of life.</p>
+                        <a href="encoder.html" class="btn btn-primary btn-large"><span>Open Encoder</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand"><span class="footer-logo">DNA Encoder</span><p class="footer-tagline">Biology as a Language of Data</p></div>
+                <div class="footer-links"><a href="index.html">Home</a><a href="encoder.html">Encoder</a><a href="how-it-works.html">How It Works</a><a href="about.html">About</a></div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>

@@ -1,0 +1,863 @@
+/* ============================================
+   DNA Word Encoder - Encoder Page Styles
+   Premium redesign with beautiful loading
+   ============================================ */
+
+/* Encoder Page Layout */
+.encoder-page {
+    padding-bottom: var(--space-4xl);
+    min-height: 100vh;
+}
+
+.encoder-section {
+    padding-top: var(--space-3xl);
+}
+
+.encoder-header {
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+}
+
+.encoder-title {
+    margin-bottom: var(--space-xs);
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.encoder-subtitle {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Mode Toggle */
+.mode-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: var(--space-xl);
+    padding: 4px;
+    background: var(--color-bg-subtle);
+    border-radius: var(--radius-lg);
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid var(--color-border);
+}
+
+.mode-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-lg);
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.mode-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+.mode-btn:hover {
+    color: var(--color-text);
+}
+
+.mode-btn.active {
+    background: var(--color-bg-elevated);
+    color: var(--color-primary);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Input Section */
+.input-section {
+    max-width: 640px;
+    margin: 0 auto var(--space-2xl);
+}
+
+.input-card {
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-md);
+}
+
+.input-label {
+    display: block;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.text-input {
+    width: 100%;
+    min-height: 100px;
+    padding: var(--space-md);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    color: var(--color-text);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    resize: vertical;
+    transition: all var(--transition-base);
+}
+
+.text-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-subtle);
+}
+
+.text-input::placeholder {
+    color: var(--color-text-muted);
+}
+
+.text-input.dna-input {
+    font-family: var(--font-mono);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.input-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--space-md);
+}
+
+.char-count {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+}
+
+/* Encoded Text Display - NEW */
+.encoded-source {
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+    padding: var(--space-lg);
+    background: var(--color-bg-subtle);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+}
+
+.encoded-source-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-xs);
+}
+
+.encoded-source-text {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--color-text);
+    font-family: var(--font-serif);
+}
+
+/* Results Section */
+.results-section {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.result-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.result-card {
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    box-shadow: var(--shadow-sm);
+    animation: slideUp 0.5s ease forwards;
+    opacity: 0;
+}
+
+.result-card:nth-child(1) { animation-delay: 0.1s; }
+.result-card:nth-child(2) { animation-delay: 0.2s; }
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-md);
+}
+
+.result-title {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+}
+
+.result-content {
+    font-size: 0.9375rem;
+    line-height: 1.8;
+    word-break: break-all;
+}
+
+.result-content.mono {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    background: var(--color-bg);
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+}
+
+.dna-sequence {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.dna-sequence .base {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    animation: baseAppear 0.3s ease forwards;
+    opacity: 0;
+}
+
+@keyframes baseAppear {
+    to { opacity: 1; transform: scale(1); }
+    from { opacity: 0; transform: scale(0.8); }
+}
+
+.decoded-text {
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: var(--color-text);
+    padding: var(--space-lg);
+    background: var(--color-bg);
+    border-radius: var(--radius-md);
+    text-align: center;
+    font-family: var(--font-serif);
+    border: 1px solid var(--color-border);
+}
+
+/* Double Helix Visualization */
+.helix-visualization {
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-md);
+    animation: slideUp 0.5s ease 0.3s forwards;
+    opacity: 0;
+}
+
+.helix-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-lg);
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+
+.strand-labels {
+    display: flex;
+    gap: var(--space-md);
+}
+
+.strand-label {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-sm);
+}
+
+.strand-label.primary {
+    background: var(--color-primary-subtle);
+    color: var(--color-primary);
+}
+
+.strand-label.complement {
+    background: rgba(155, 125, 197, 0.15);
+    color: #9b7dc5;
+}
+
+.double-helix {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: var(--space-lg);
+    background: var(--color-bg);
+    border-radius: var(--radius-lg);
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid var(--color-border);
+}
+
+.helix-pair {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xs);
+    padding: 6px 0;
+    animation: helixPairWave 2.5s ease-in-out infinite, pairAppear 0.4s ease forwards;
+    opacity: 0;
+    transform-origin: center;
+}
+
+@keyframes pairAppear {
+    to { opacity: 1; }
+}
+
+@keyframes helixPairWave {
+    0%, 100% {
+        transform: translateX(-15px) scale(0.95);
+    }
+    50% {
+        transform: translateX(15px) scale(1);
+    }
+}
+
+.helix-base {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 1.125rem;
+    font-weight: 700;
+    border-radius: var(--radius-md);
+    background: var(--color-bg-elevated);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.helix-base:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-md);
+}
+
+.helix-base.primary.base-a { border-color: var(--color-base-a); background: rgba(224, 123, 83, 0.1); }
+.helix-base.primary.base-t { border-color: var(--color-base-t); background: rgba(91, 143, 201, 0.1); }
+.helix-base.primary.base-c { border-color: var(--color-base-c); background: rgba(107, 179, 138, 0.1); }
+.helix-base.primary.base-g { border-color: var(--color-base-g); background: rgba(155, 125, 197, 0.1); }
+
+.helix-base.complement.base-a { border-color: var(--color-base-a); background: rgba(224, 123, 83, 0.08); }
+.helix-base.complement.base-t { border-color: var(--color-base-t); background: rgba(91, 143, 201, 0.08); }
+.helix-base.complement.base-c { border-color: var(--color-base-c); background: rgba(107, 179, 138, 0.08); }
+.helix-base.complement.base-g { border-color: var(--color-base-g); background: rgba(155, 125, 197, 0.08); }
+
+.helix-bond {
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg,
+        var(--color-primary) 0%,
+        var(--color-border-strong) 30%,
+        var(--color-border-strong) 70%,
+        var(--color-primary) 100%
+    );
+    border-radius: 2px;
+    animation: bondPulse 2s ease-in-out infinite;
+}
+
+@keyframes bondPulse {
+    0%, 100% { opacity: 0.5; transform: scaleX(0.9); }
+    50% { opacity: 1; transform: scaleX(1); }
+}
+
+.helix-index {
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    color: var(--color-text-muted);
+    width: 24px;
+    text-align: center;
+    opacity: 0.6;
+}
+
+/* Reset Button */
+.reset-btn {
+    display: flex;
+    margin: var(--space-xl) auto 0;
+    gap: var(--space-sm);
+}
+
+/* Copy Button */
+.copy-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.copy-btn svg {
+    width: 14px;
+    height: 14px;
+    color: var(--color-text-muted);
+}
+
+.copy-btn:hover {
+    background: var(--color-primary-subtle);
+    border-color: var(--color-primary);
+}
+
+.copy-btn:hover svg {
+    color: var(--color-primary);
+}
+
+/* ============================================
+   BEAUTIFUL DNA LOADING SCREEN
+   ============================================ */
+
+.loading-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: var(--color-bg);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.loading-screen.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 3D DNA Helix Container */
+.dna-helix-3d {
+    position: relative;
+    width: 200px;
+    height: 320px;
+}
+
+.helix-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Each rung of the helix */
+.helix-rung {
+    position: absolute;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    animation: helixWave 3s ease-in-out infinite;
+}
+
+@keyframes helixWave {
+    0%, 100% {
+        transform: translateX(-50%) translateX(-40px);
+    }
+    50% {
+        transform: translateX(-50%) translateX(40px);
+    }
+}
+
+/* Nucleotide bases */
+.helix-nucleotide {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: white;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+.helix-nucleotide[data-base="A"] {
+    background: linear-gradient(135deg, #e07b53, #d05a30);
+}
+
+.helix-nucleotide[data-base="T"] {
+    background: linear-gradient(135deg, #5b8fc9, #3a6ea5);
+}
+
+.helix-nucleotide[data-base="C"] {
+    background: linear-gradient(135deg, #6bb38a, #4a9268);
+}
+
+.helix-nucleotide[data-base="G"] {
+    background: linear-gradient(135deg, #9b7dc5, #7a5ba3);
+}
+
+.helix-connector {
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        transparent 0%,
+        var(--color-border-strong) 20%,
+        var(--color-border-strong) 80%,
+        transparent 100%
+    );
+    border-radius: 2px;
+}
+
+/* Loading Text */
+.loading-info {
+    margin-top: var(--space-3xl);
+    text-align: center;
+}
+
+.loading-title {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--color-text);
+    margin-bottom: var(--space-sm);
+}
+
+.loading-subtitle {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-xl);
+}
+
+.loading-progress {
+    width: 180px;
+    height: 3px;
+    background: var(--color-border);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, 
+        var(--color-primary), 
+        var(--color-base-c), 
+        var(--color-base-g),
+        var(--color-primary)
+    );
+    background-size: 300% 100%;
+    border-radius: var(--radius-full);
+    animation: progressShimmer 2s linear infinite;
+}
+
+@keyframes progressShimmer {
+    0% { background-position: 100% 0; }
+    100% { background-position: -100% 0; }
+}
+
+/* Floating Particles */
+.loading-particles {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    font-family: var(--font-mono);
+    font-weight: 500;
+    opacity: 0.08;
+    color: var(--color-primary);
+    animation: floatParticle 20s linear infinite;
+}
+
+@keyframes floatParticle {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    5% { opacity: 0.1; }
+    95% { opacity: 0.1; }
+    100% {
+        transform: translateY(-50px) rotate(180deg);
+        opacity: 0;
+    }
+}
+
+/* Hide old loading elements */
+.dna-helix,
+.helix-strand,
+.helix-bonds,
+.helix-node,
+.node-base,
+.bg-gradient-1,
+.bg-gradient-2,
+.loading-background,
+.loading-content:not(.loading-info) {
+    display: none !important;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - All Devices
+   ============================================ */
+
+/* Tablet and below */
+@media (max-width: 1024px) {
+    .encoder-section {
+        padding-top: var(--space-2xl);
+    }
+    
+    .input-section {
+        max-width: 100%;
+        padding: 0 var(--space-md);
+    }
+    
+    .results-section {
+        max-width: 100%;
+        padding: 0 var(--space-md);
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+    .encoder-header {
+        padding: 0 var(--space-md);
+    }
+    
+    .encoder-title {
+        font-size: 1.75rem;
+    }
+    
+    .mode-toggle {
+        width: calc(100% - var(--space-md) * 2);
+        max-width: 320px;
+    }
+    
+    .mode-btn {
+        flex: 1;
+        justify-content: center;
+        padding: var(--space-sm) var(--space-md);
+    }
+    
+    .input-card {
+        padding: var(--space-md);
+    }
+    
+    .text-input {
+        min-height: 80px;
+        font-size: 0.9375rem;
+    }
+    
+    .input-footer {
+        flex-direction: column;
+        gap: var(--space-md);
+        align-items: stretch;
+    }
+    
+    .input-footer .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    /* Results on mobile */
+    .encoded-source {
+        margin: 0 var(--space-md) var(--space-lg);
+    }
+    
+    .encoded-source-text {
+        font-size: 1.25rem;
+    }
+    
+    .result-card {
+        padding: var(--space-md);
+    }
+    
+    .result-content.mono {
+        font-size: 0.75rem;
+        padding: var(--space-sm);
+        word-break: break-all;
+    }
+    
+    .dna-sequence {
+        gap: 4px;
+    }
+    
+    .dna-sequence .base {
+        width: 26px;
+        height: 26px;
+        font-size: 0.75rem;
+    }
+    
+    /* Helix on mobile */
+    .helix-visualization {
+        padding: var(--space-md);
+    }
+    
+    .helix-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-sm);
+    }
+    
+    .strand-labels {
+        flex-wrap: wrap;
+    }
+    
+    .double-helix {
+        padding: var(--space-sm);
+        max-height: 300px;
+    }
+    
+    .helix-pair {
+        gap: 2px;
+    }
+    
+    .helix-base {
+        width: 32px;
+        height: 32px;
+        font-size: 0.875rem;
+    }
+    
+    .helix-bond {
+        width: 30px;
+    }
+    
+    .helix-index {
+        width: 18px;
+        font-size: 0.5rem;
+    }
+    
+    /* Loading screen on mobile */
+    .dna-helix-3d {
+        transform: scale(0.7);
+    }
+    
+    .loading-title {
+        font-size: 1rem;
+    }
+    
+    .loading-subtitle {
+        font-size: 0.8125rem;
+        padding: 0 var(--space-md);
+    }
+    
+    .loading-progress {
+        width: 150px;
+    }
+    
+    /* Decoded text */
+    .decoded-text {
+        font-size: 1.25rem;
+        padding: var(--space-md);
+    }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+    .encoder-title {
+        font-size: 1.5rem;
+    }
+    
+    .encoder-subtitle {
+        font-size: 0.875rem;
+    }
+    
+    .mode-toggle {
+        width: 100%;
+        max-width: none;
+        margin-left: var(--space-md);
+        margin-right: var(--space-md);
+    }
+    
+    .helix-base {
+        width: 28px;
+        height: 28px;
+        font-size: 0.75rem;
+    }
+    
+    .helix-bond {
+        width: 24px;
+    }
+    
+    .helix-index {
+        display: none;
+    }
+    
+    .dna-sequence .base {
+        width: 22px;
+        height: 22px;
+        font-size: 0.6875rem;
+    }
+    
+    /* Disable helix animation on small screens for performance */
+    .helix-pair {
+        animation: pairAppear 0.4s ease forwards;
+    }
+}
+
+/* Landscape phones */
+@media (max-height: 500px) and (orientation: landscape) {
+    .loading-screen {
+        flex-direction: row;
+        gap: var(--space-2xl);
+    }
+    
+    .dna-helix-3d {
+        transform: scale(0.5);
+    }
+    
+    .loading-info {
+        margin-top: 0;
+        text-align: left;
+    }
+}
+
+/* Large screens - ensure max width */
+@media (min-width: 1400px) {
+    .encoder-section .container {
+        max-width: 900px;
+    }
+}

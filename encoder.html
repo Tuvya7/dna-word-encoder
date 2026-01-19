@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DNA Word Encoder — Transform text into DNA sequences and back. Experience the encoding process visually.">
+    <title>Encoder — DNA Word Encoder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/encoder.css">
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('dna-encoder-theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+</head>
+<body>
+    <!-- Beautiful DNA Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-particles" id="loadingParticles"></div>
+        
+        <div class="dna-helix-3d">
+            <div class="helix-container" id="helixContainer"></div>
+        </div>
+        
+        <div class="loading-info">
+            <div class="loading-title" id="loadingTitle">Encoding your message</div>
+            <div class="loading-subtitle">Translating data into biological language</div>
+            <div class="loading-progress">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="mainNav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-dna">DNA</span>
+                <span class="logo-separator">·</span>
+                <span class="logo-text">Encoder</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="encoder.html" class="nav-link active">Encoder</a>
+                <a href="how-it-works.html" class="nav-link">How It Works</a>
+                <a href="about.html" class="nav-link">About</a>
+            </div>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <svg class="theme-icon sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="5"/>
+                    <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                </svg>
+                <svg class="theme-icon moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="page-content encoder-page">
+        <section class="encoder-section">
+            <div class="container">
+                <header class="encoder-header fade-in-up">
+                    <h1 class="encoder-title">DNA Encoder</h1>
+                    <p class="encoder-subtitle">Transform text into the molecular language of life</p>
+                </header>
+
+                <!-- Mode Toggle -->
+                <div class="mode-toggle fade-in-up" style="--delay: 0.1s">
+                    <button class="mode-btn active" data-mode="encode" id="encodeModeBtn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                        </svg>
+                        <span>Encode</span>
+                    </button>
+                    <button class="mode-btn" data-mode="decode" id="decodeModeBtn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 12H3M12 3v18"/>
+                        </svg>
+                        <span>Decode</span>
+                    </button>
+                </div>
+
+                <!-- Input Section -->
+                <div class="input-section fade-in-up" style="--delay: 0.2s" id="inputSection">
+                    <div class="input-card" id="encodeInput">
+                        <label class="input-label">Enter your text</label>
+                        <textarea class="text-input" id="textInput" placeholder="Type a word or sentence..." maxlength="100"></textarea>
+                        <div class="input-footer">
+                            <span class="char-count"><span id="charCount">0</span>/100 characters</span>
+                            <button class="btn btn-primary" id="encodeBtn">
+                                <span>Encode to DNA</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="input-card hidden" id="decodeInput">
+                        <label class="input-label">Enter DNA sequence (A, C, G, T only)</label>
+                        <textarea class="text-input dna-input" id="dnaInput" placeholder="ACGTACGT..." maxlength="400"></textarea>
+                        <div class="input-footer">
+                            <span class="char-count"><span id="dnaCharCount">0</span>/400 bases</span>
+                            <button class="btn btn-primary" id="decodeBtn">
+                                <span>Decode to Text</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Section -->
+                <div class="results-section hidden" id="resultsSection">
+                    <!-- Show what was encoded -->
+                    <div class="encoded-source" id="encodedSource">
+                        <div class="encoded-source-label">You encoded</div>
+                        <div class="encoded-source-text" id="encodedSourceText"></div>
+                    </div>
+
+                    <!-- Encode Results -->
+                    <div class="result-container" id="encodeResults">
+                        <div class="result-card binary-result">
+                            <div class="result-header">
+                                <h3 class="result-title">Binary Representation</h3>
+                                <button class="copy-btn" data-target="binaryOutput" title="Copy">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="result-content mono" id="binaryOutput"></div>
+                        </div>
+
+                        <div class="result-card dna-result">
+                            <div class="result-header">
+                                <h3 class="result-title">DNA Sequence (5' → 3')</h3>
+                                <button class="copy-btn" data-target="dnaOutput" title="Copy">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="result-content dna-sequence" id="dnaOutput"></div>
+                        </div>
+
+                        <!-- Double Helix Visualization -->
+                        <div class="helix-visualization">
+                            <div class="helix-header">
+                                <h3 class="result-title">Double Helix Structure</h3>
+                                <div class="strand-labels">
+                                    <span class="strand-label primary">Primary 5'→3'</span>
+                                    <span class="strand-label complement">Complement 3'←5'</span>
+                                </div>
+                            </div>
+                            <div class="double-helix" id="doubleHelix"></div>
+                        </div>
+                    </div>
+
+                    <!-- Decode Results -->
+                    <div class="result-container hidden" id="decodeResults">
+                        <div class="result-card decode-result">
+                            <div class="result-header">
+                                <h3 class="result-title">Decoded Message</h3>
+                                <button class="copy-btn" data-target="textOutput" title="Copy">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="result-content decoded-text" id="textOutput"></div>
+                        </div>
+
+                        <div class="result-card binary-result">
+                            <div class="result-header">
+                                <h3 class="result-title">Binary Representation</h3>
+                            </div>
+                            <div class="result-content mono" id="decodedBinaryOutput"></div>
+                        </div>
+                    </div>
+
+                    <!-- Actions -->
+                    <button class="btn btn-outline reset-btn" id="resetBtn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                            <path d="M3 3v5h5"/>
+                        </svg>
+                        <span>Encode Another</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="footer-logo">DNA Encoder</span>
+                    <p class="footer-tagline">Biology as a Language of Data</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="encoder.html">Encoder</a>
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="about.html">About</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/encoder.js"></script>
+</body>
+</html>
