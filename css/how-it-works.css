@@ -120,6 +120,9 @@
 
 .step-info {
     max-width: 480px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .step-badge {
@@ -142,6 +145,9 @@
     font-size: 1.0625rem;
     line-height: 1.8;
     margin-bottom: var(--space-md);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .step-detail {
@@ -222,6 +228,7 @@
     border-radius: var(--radius-lg);
     padding: var(--space-xl);
     transition: all var(--transition-base);
+    text-align: center;
 }
 
 .mapping-item:hover {
