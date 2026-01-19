@@ -1,8 +1,4 @@
-/* ============================================
-   DNA Word Encoder - About Page Styles
-   ============================================ */
 
-/* About Hero */
 .about-hero {
     padding: var(--space-4xl) 0 var(--space-3xl);
     text-align: center;
@@ -16,9 +12,12 @@
 .about-subtitle {
     font-size: 1.25rem;
     color: var(--color-text-muted);
+    text-align: center;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* About Section */
 .about-section {
     padding: var(--space-3xl) 0;
 }
@@ -35,6 +34,7 @@
     border-radius: var(--radius-xl);
     padding: var(--space-2xl);
     transition: all var(--transition-base);
+    text-align: center;
 }
 
 .about-card:hover {
@@ -51,6 +51,8 @@
     background: var(--color-primary-subtle);
     border-radius: var(--radius-lg);
     margin-bottom: var(--space-lg);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .about-card-icon svg {
@@ -65,11 +67,15 @@
     font-weight: 600;
     margin-bottom: var(--space-md);
     color: var(--color-text);
+    text-align: center;
 }
 
 .about-card-text {
     font-size: 0.9375rem;
     line-height: 1.8;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Science Section */
@@ -85,10 +91,22 @@
     align-items: start;
 }
 
+.science-text {
+    text-align: center;
+}
+
+.science-text .section-title {
+    text-align: center;
+}
+
 .science-text p {
     font-size: 1rem;
     line-height: 1.9;
     margin-bottom: var(--space-lg);
+    text-align: center;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .science-text p:last-child {
@@ -144,6 +162,9 @@
     font-size: 1.125rem;
     line-height: 1.8;
     margin-bottom: var(--space-2xl);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .purpose-points {
@@ -174,10 +195,6 @@
     color: var(--color-primary);
     font-weight: 600;
 }
-
-/* ============================================
-   RESPONSIVE DESIGN - About Page
-   ============================================ */
 
 @media (max-width: 900px) {
     .science-content {
